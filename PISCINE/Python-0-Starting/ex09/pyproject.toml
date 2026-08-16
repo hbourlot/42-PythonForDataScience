@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ft_package"
+version = "0.0.1"
+authors = [
+	{ name="hbourlot", email="hbourlot@42.ft"},
+]
+description = " A sample test package"
+readme = "README.md"
+license = "MIT"
+requires-python=">=3.8"
+
+[tool.setuptools]
+packages = ["ft_package"]
+#py-modules = ["ft_print_hi", "ft_tqdm", "ft_count_in_list"]
+
+[project.urls]
+Homepage = "https://github.com/hbourlot/42-PythonForDataScience/tree/main/PISCINE/Python-0-Starting/ex09"
