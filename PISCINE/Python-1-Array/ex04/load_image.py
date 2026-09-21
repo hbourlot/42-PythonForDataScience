@@ -8,7 +8,5 @@ def ft_load(path: str) -> list:
 
     if image is None:
         raise ValueError("Couldn't load the image")
-    
-    print("The shape of image is: ", image.shape)
 
     return np.array(image)
