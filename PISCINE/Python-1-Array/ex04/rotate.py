@@ -7,9 +7,6 @@ if __name__ == "__main__":
     try:
         image = ft_load("animal.jpg")[1800:2200, 1300:1700]
 
-        print("The shape of image is: ", image.shape)
-        print(image)
-
         gray_image = cv.cvtColor(image, cv.COLOR_BGR2GRAY)
 
         col = 0
@@ -25,6 +22,7 @@ if __name__ == "__main__":
                 transpose[j][i] = gray_image[i][j]
 
         rotate = np.array(transpose)
+        
         print("New shape after slicing: ", rotate.shape)
         print(rotate)
 
