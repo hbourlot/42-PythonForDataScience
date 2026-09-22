@@ -3,14 +3,13 @@ import cv2 as cv
 from load_image import ft_load
 import numpy as np
 
-if __name__ == "__main__":
+def main():
+    """Load, crop, transpose, and display an image.
+    """
     try:
         image = ft_load("animal.jpg")[1800:2200, 1300:1700]
 
         gray_image = cv.cvtColor(image, cv.COLOR_BGR2GRAY)
-
-        col = 0
-        row = 0
 
         h = len(gray_image)
         w = len(gray_image[0])
@@ -31,3 +30,8 @@ if __name__ == "__main__":
 
     except Exception as error:
         print("Error:", error)
+
+    
+
+if __name__ == "__main__":
+    main()
