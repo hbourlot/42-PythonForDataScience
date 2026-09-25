@@ -1,7 +1,8 @@
 import matplotlib.pyplot as plt
 from load_csv import load
 
-def convert_population_value(value: str) -> float:
+
+def convert_ppl_value(value: str) -> float:
     """Convert a population value from M to number.
 
     Args:
@@ -19,27 +20,29 @@ def main():
     Returns:
         int: 0 on success, 1 on error.
     """
-    dataFrame = load("population_total.csv")
+    dataFrame = load("../SUBJECTS/population_total.csv")
 
     if dataFrame is None:
         return 1
     try:
         x_axis = [int(year) for year in dataFrame.columns.tolist()[1:]]
-        
+
         end = x_axis.index(2050) + 1
         x_axis = x_axis[:end]
-        
+
         x_ticks = [x_axis[0] + i * 40 for i in range(7)]
 
         b_country = dataFrame.loc[dataFrame["country"] == "Belgium"].squeeze()
-        b_y_axis = [convert_population_value(value) for value in b_country.tolist()[1:end + 1]]
-        plt.plot(x_axis, b_y_axis, label='Belgium', color='blue')
+        b_y_axis = [
+            convert_ppl_value(value) for value in b_country.tolist()[1: end+1]
+        ]
+        plt.plot(x_axis, b_y_axis, label="Belgium", color="blue")
 
-        
         f_country = dataFrame.loc[dataFrame["country"] == "France"].squeeze()
-        f_y_axis = [convert_population_value(value) for value in f_country.tolist()[1:end + 1]]
+        f_y_axis = [
+            convert_ppl_value(value) for value in f_country.tolist()[1: end+1]
+        ]
         plt.plot(x_axis, f_y_axis, label="France", color="green")
-        
 
         plt.yticks([20_000_000, 40_000_000, 60_000_000], ["20M", "40M", "60M"])
         plt.xticks(x_ticks)
