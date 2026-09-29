@@ -1,0 +1,10 @@
+__pycache__
+tester.py
+.DS_Store
+.vscode
+pgadmin_password.txt
+db_password.txt
+subjects
+subject
+.idea
+*.csv

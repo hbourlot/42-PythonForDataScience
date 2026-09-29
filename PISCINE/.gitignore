@@ -2,3 +2,8 @@
 .vscode/
 __pycache__/
 tester.py
+db_password.txt
+en-subject.pdf
+subject
+subjects
+*.csv
