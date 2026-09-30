@@ -1,22 +1,22 @@
 services:
-  postgres:
-    image: postgres:16
-    container_name: postgres-42
-    environment:
-      POSTGRES_DB: piscineds
-      POSTGRES_USER: hbourlot
-      POSTGRES_PASSWORD_FILE: /run/secrets/db_password
-    secrets:
-      - db_password
-    ports:
-      - "4242:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-      - /Users/hugobourlot/Projects/42-PythonForDataScience/PISCINE/PISCINE-2/DataSciente-0/:/data
+    postgres:
+        image: postgres:16
+        container_name: postgres-42
+        environment:
+            POSTGRES_DB: piscineds
+            POSTGRES_USER: hbourlot
+            POSTGRES_PASSWORD_FILE: /run/secrets/db_password
+        secrets:
+            - db_password
+        ports:
+            - "4242:5432"
+        volumes:
+            - postgres_data:/var/lib/postgresql/data
+            - /Users/hugobourlot/Projects/42-PythonForDataScience/PISCINE/PISCINE-2/DataSciente-0/subject/:/data
 
 secrets:
-  db_password:
-    file: ./db_password.txt
+    db_password:
+        file: ./db_password.txt
 
 volumes:
-  postgres_data:
+    postgres_data:
