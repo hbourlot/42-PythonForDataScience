@@ -17,7 +17,7 @@ def get_connection(dbname, user, password, host, port):
     """
     Open a connection to the PostgreSQL database.
 
-    :param database: name of the database
+    :param dbname: name of the database
     :param user: database user
     :param password: password of the user
     :param host: address of the server
