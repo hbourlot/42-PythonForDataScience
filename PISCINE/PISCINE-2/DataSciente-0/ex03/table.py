@@ -2,7 +2,7 @@ from pathlib import Path
 import psycopg
 
 
-def read_password(path):
+def read_password(path) -> str:
     """
     Read the database password from a file.
 

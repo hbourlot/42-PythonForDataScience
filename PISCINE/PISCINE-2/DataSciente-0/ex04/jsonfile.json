@@ -1,0 +1,29 @@
+[
+	{
+		"title": "O Senhor dos Anéis: A Sociedade do Anel",
+		"original_title": "The Lord of the Rings: The Fellowship of the Ring",
+		"is_movie": true,
+		"imdb_rating": 8.8,
+		"year": 2001,
+		"characters": ["Frodo", "Sam", "Gandalf", "Legolas", "Boromir"],
+		"budget": null
+	},
+	{
+		"title": "The Matrix",
+		"original_title": "The Matrix",
+		"is_movie": true,
+		"imdb_rating": 8.7,
+		"year": 1999,
+		"characters": ["Neo", "Trinity", "Morpheus", "Agent Smith"],
+		"budget": 63000000
+	},
+	{
+		"title": "Interstellar",
+		"original_title": "Interstellar",
+		"is_movie": true,
+		"imdb_rating": 8.7,
+		"year": 2014,
+		"characters": ["Cooper", "Amelia", "Murph", "Brand"],
+		"budget": 165000000
+	}
+]
