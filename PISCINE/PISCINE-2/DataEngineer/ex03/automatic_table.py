@@ -136,11 +136,10 @@ def automatic_table(
 
     csv_paths = get_csv_files(f_path)
     for path in csv_paths:
-
         file_stem = path.stem
 
         if table_exists(engine, file_stem):
-            with engine.connect() as conn:
+            with engine.begin() as conn:
                 conn.execute(db.text(f"DROP TABLE IF EXISTS {file_stem}"))
                 print(f"Table {file_stem} dropped.")
 
@@ -155,26 +154,29 @@ def automatic_table(
             user_id=db.BIGINT,
             user_session=db.UUID,
         )
+        metadata_obj.create_all(engine)
 
-        print("Loading database...")
+        print(f"Loading {path.stem}...")
         load_database(engine, table, str(path))
         print("\033[32mDatabase loaded.\033[0m")
 
     engine.raw_connection().commit()
 
 
+def main() -> None:
+    data_bate = "piscineds"
+    user = "hbourlot"
+    password = open("./db_password.txt").read().strip()
+    port = "4242"
+    host = "localhost"
+    folder_csv = "../subject/customer/"
+
+    automatic_table(data_bate, user, password, port, host, folder_csv)
+
+
 if __name__ == "__main__":
-    data_bate = input("Database name: ")  # "piscineds"
-    user = input("Username: ")  # "hbourlot"
-    password = getpass("Password: ")
-    # open("./db_password.txt").read().strip()
-    port = input("Port: ")  # "4242"
-    host = input("Host: ")  # "localhost"
-    folder_csv = (
-        input("CSV folder [../subject/customer]: ") or "../subject/customer"
-    )  # "../subject/customer"
 
     try:
-        automatic_table(data_bate, user, password, port, host, folder_csv)
+        main()
     except Exception as e:
         print(f"Error: {e}")
