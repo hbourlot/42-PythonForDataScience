@@ -18,8 +18,8 @@ PISCINE/
     └── DataWarehouse       merging customer / item tables
 ```
 
-Each module has one folder per exercise (`ex00`, `ex01`, ...). The subject PDF
-for the PISCINE-2 modules sits next to them as `en.subject.pdf`.
+Each module has one folder per exercise (`ex00`, `ex01`, ...). Subject PDFs are
+not committed.
 
 ## Requirements
 
